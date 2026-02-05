@@ -10,6 +10,7 @@
     "runArgs": [
         "--pid=host"
     ],
+    "capAdd": [ "ALL" /* I've got the Power! */ ],
     "securityOpt": [
         "apparmor=unconfined"
     ],
