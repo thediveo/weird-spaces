@@ -2,7 +2,10 @@
     "name": "fully privileged, Docker-out-of-Docker",
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
     "features": {
-        "ghcr.io/devcontainers/features/docker-outside-of-docker": {}
+        "ghcr.io/devcontainers/features/docker-outside-of-docker": {
+            // https://docs.docker.com/reference/api/engine/#api-version-matrix
+            "version": "24.0"
+        }
     },
     "runArgs": [
         "--pid=host"
