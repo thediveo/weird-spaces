@@ -13,8 +13,9 @@
     "securityOpt": [
         "apparmor=unconfined"
     ],
-    "postCreateCommand": {
-        "edgesharknado!": "wget -q --no-cache -O - https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose-localhost.yaml | docker compose -f - up",
-        "lxkns": "wget -q --no-cache -O - https://github.com/thediveo/lxkns/raw/master/deployments/wget/docker-compose.yaml | docker compose -f - up"
+    "postStartCommand": {
+        // make sure to (re)start Edgeshark services when the codespace is continued after pause.
+        "edgesharknado!": "wget -q --no-cache -O - https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose-localhost.yaml | docker compose -f - up -d",
+        "lxkns": "wget -q --no-cache -O - https://github.com/thediveo/lxkns/raw/master/deployments/wget/docker-compose.yaml | docker compose -f - up -d"
     }
 }
